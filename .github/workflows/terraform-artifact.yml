@@ -46,11 +46,11 @@ jobs:
       run: terraform plan --out=plan.tfplan
         
     - name: Compress TF Plan artifact
-      run: zip -r my-artifact.zip . -i ./terraform/PRO
+      run: zip -r my-artifact.zip . -i ./*
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3.1.2
       with:
         name: my-artifact
-        path: "./terraform/my-artifact.zip"
+        path: "./terraform/PRO/my-artifact.zip"
         retention-days: 5
