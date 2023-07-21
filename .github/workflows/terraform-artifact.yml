@@ -46,7 +46,7 @@ jobs:
       run: terraform plan --out=plan.tfplan
         
     - name: Compress TF Plan artifact
-      run: zip -r my-artifact.zip ./*
+      run: zip -r my-artifact.zip ./terraform
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3.1.2
