@@ -61,5 +61,4 @@ jobs:
         path: "./terraform/myartifact.zip"
 
     - name: Decompress TF Plan artifact
-      working-directory: ./terraform
       run: unzip myartifact.zip
