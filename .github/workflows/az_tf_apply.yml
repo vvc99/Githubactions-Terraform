@@ -19,9 +19,6 @@ jobs:
         working-directory: "./terraform/PRO"
         
     steps:
-      - name: Install Tree
-        run: sudo apt-get install tree
-        
       - name: Download Artifact
         uses: dawidd6/action-download-artifact@v2
         with:
@@ -32,6 +29,9 @@ jobs:
 
       - name: Decompress TF Plan artifact
         run: unzip myartifact.zip
+        
+      - name: ls
+        run: ls
         
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2.0.3
