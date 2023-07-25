@@ -25,6 +25,7 @@ jobs:
           workflow: az_tf_plan.yml
           name: myartifact
           path: "./terraform/PRO/myartifact.zip"
+          search_artifacts: true
 
       - name: Decompress TF Plan artifact
         run: unzip myartifact.zip
