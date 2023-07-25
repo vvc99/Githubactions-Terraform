@@ -30,6 +30,9 @@ jobs:
       - name: Decompress TF Plan artifact
         run: unzip myartifact.zip
         
+      - name: pwd
+        run: ls
+        
       - name: ls
         run: ls
         
