@@ -53,12 +53,3 @@ jobs:
         name: myartifact
         path: "./terraform/PRO/myartifact.zip"
         retention-days: 5
-        
-    - name: Download Artifact
-      uses: actions/download-artifact@v3.0.2
-      with:
-        name: myartifact
-        path: "./terraform/myartifact.zip"
-
-    - name: Decompress TF Plan artifact
-      run: unzip myartifact.zip
