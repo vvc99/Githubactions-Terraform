@@ -31,7 +31,7 @@ jobs:
         run: unzip myartifact.zip
         
       - name: pwd
-        run: ls
+        run: pwd
         
       - name: ls
         run: ls
