@@ -1,0 +1,33 @@
+name: 'Apply_TF_Plan'
+ 
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+ 
+jobs:
+  apply-plan:
+    env:
+      ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+    runs-on: ubuntu-latest
+    environment: production
+ 
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: "./terraform/PRO"
+        
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v3.0.2
+        with:
+          name: my-artifact
+          path: "./terraform/PRO/my-artifact.zip"
+
+      - name: Decompress TF Plan artifact
+        run: unzip my-artifact.zip
