@@ -20,7 +20,7 @@ jobs:
         
     steps:
       - name: Install Tree
-        run: apt-get install tree
+        run: sudo apt-get install tree
         
       - name: Download Artifact
         uses: dawidd6/action-download-artifact@v2
