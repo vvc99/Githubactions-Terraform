@@ -58,7 +58,7 @@ jobs:
       uses: actions/download-artifact@v3.0.2
       with:
         name: my-artifact
-        path: "./terraform/PRO/my-artifact.zip"
+        path: "./terraform/my-artifact.zip"
 
     - name: Decompress TF Plan artifact
       run: unzip my-artifact.zip
