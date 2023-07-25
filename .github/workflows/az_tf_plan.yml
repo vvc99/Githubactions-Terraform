@@ -45,21 +45,21 @@ jobs:
       run: terraform plan --out=plan.tfplan
         
     - name: Compress TF Plan artifact
-      run: zip -r my-artifact.zip . -i ./*
+      run: zip -r myartifact.zip . -i ./*
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3.1.2
       with:
-        name: my-artifact
-        path: "./terraform/PRO/my-artifact.zip"
+        name: myartifact
+        path: "./terraform/PRO/myartifact.zip"
         retention-days: 5
         
     - name: Download Artifact
       uses: actions/download-artifact@v3.0.2
       with:
-        name: my-artifact
-        path: "./terraform/my-artifact.zip"
+        name: myartifact
+        path: "./terraform/myartifact.zip"
 
     - name: Decompress TF Plan artifact
       working-directory: ./terraform
-      run: unzip my-artifact.zip
+      run: unzip myartifact.zip
