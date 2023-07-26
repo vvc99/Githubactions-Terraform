@@ -39,6 +39,12 @@ jobs:
     - name: Terraform Validate
       id: validate
       run: terraform validate
+      
+    - name: pwd
+      run: pwd
+      
+    - name: ls
+      run: ls
 
     - name: Terraform Plan
       id: plan
