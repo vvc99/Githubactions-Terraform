@@ -54,7 +54,7 @@ jobs:
       run: ls
         
     - name: Compress TF Plan artifact
-      run: zip -r myartifact.zip
+      run: zip -r myartifact.zip ./*
       working-directory: "./terraform"
       
     - name: ls
