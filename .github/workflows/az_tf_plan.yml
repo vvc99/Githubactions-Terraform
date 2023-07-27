@@ -66,6 +66,3 @@ jobs:
         name: myartifact
         path: "./terraform/myartifact.zip"
         retention-days: 5
-        
-    - name: ls
-      run: ls
